@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  .wrapper
+    .title
+      h1 Inicio de sesión
+    .desc
+      p.
+        Para iniciar sesión de un usuario en <span class="text-primary">Polaris</span>
+        se realiza mandando datos via <span class="text-info">POST</span> en formato JSON a la dirección:
+        <br>
+      .url
+        small  URL:
+        br
+        <code><span class="text-primary">https://polaris-app.herokuapp.com/api/login</span></code>
+    .sintaxis
+      h3 Sintaxis
+      .send
+        p.
+          Ejemplo de JSON a enviar:
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-info "user_login"</span> : { <br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          span.text-info "email"</span>: "example@mail.com", <br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          span.text-info "password"</span>: "supersecret" <br/>
+          &nbsp;&nbsp;
+          } <br/>
+          } <br/>
+      .receive
+        p.
+          Respuesta ejemplo:
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-success "success"</span>: true,<br/>
+          &nbsp;&nbsp;
+          span.text-success "auth_token"</span>: "yuPLLWx89oAmRKR3aMiQ",<br/>
+          &nbsp;&nbsp;
+          span.text-success "email"</span>: "example@mail.com"<br/>
+          } <br/>
+      .errors
+        h3 Errores
+        p.
+          Entre los posibles errores se pueden encontrar:
+        h4 Correo electrónico o contraseña inválidas
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-danger "success"</span>: false,<br/>
+          &nbsp;&nbsp;
+          span.text-danger "message"</span>: "Error with your login or password"<br/>
+          } <br/>

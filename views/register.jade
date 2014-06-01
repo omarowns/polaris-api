@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  .wrapper
+    .title
+      h1 Creación de un nuevo Usuario
+    .desc
+      p.
+        Para la creación de un nuevo usuario en <span class="text-primary">Polaris</span>
+        se realiza mandando datos via <span class="text-info">POST</span> en formato JSON a la dirección:
+        <br>
+      .url
+        small  URL:
+        br
+        <code><span class="text-primary">https://polaris-app.herokuapp.com/api/register</span></code>
+    .sintaxis
+      h3 Sintaxis
+      .send
+        p.
+          Ejemplo de JSON a enviar:
+        blockquote: p
+          {<br>
+          &nbsp;&nbsp;
+          span.text-info "user" </span>: {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          span.text-info "email" </span>: "example@mail.com",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          span.text-info "password" </span>: "supersecret"<br>
+          &nbsp;&nbsp;}<br>
+          }<br>
+      .receive
+        p.
+          Respuesta ejemplo:
+        blockquote: p
+          { <br>
+          &nbsp;&nbsp;
+          span.text-success "id" </span>: 9,<br>
+          &nbsp;&nbsp;
+          span.text-success "email" </span>: "example@mail.com",<br>
+          &nbsp;&nbsp;
+          span.text-success "created_at" </span>: "2014-06-01T06:16:37.020Z",<br>
+          &nbsp;&nbsp;
+          span.text-success "updated_at" </span>: "2014-06-01T06:16:37.034Z",<br>
+          &nbsp;&nbsp;
+          span.text-success "authentication_token" </span>: "yuPLLWx89oAmRKR3aMiQ"<br>
+          } <br>
+      .errors
+        h3 Errores
+        p.
+          Entre los posibles errores se pueden encontrar:
+        h4 Ya iniciaste sesión
+        blockquote: p
+          { <br>
+          &nbsp;&nbsp;
+          span.text-danger "success" </span>: false, <br>
+          &nbsp;&nbsp;
+          span.text-danger "message" </span>: "Ya iniciaste sesión" <br>
+          } <br>
+        h4 El correo electrónico (usuario) ya existe
+        blockquote: p
+          {<br>
+          &nbsp;&nbsp;
+          span.text-danger "email" </span>: [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          "translation missing: es.activerecord.errors.models.user.attributes.email.taken"<br>
+          &nbsp;&nbsp;
+          ]<br>
+          }<br>
+        

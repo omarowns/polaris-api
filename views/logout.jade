@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .wrapper
+    .title
+      h1 Cierre de sesión
+    .desc
+      p.
+        Para cerrar la sesión de un usuario en <span class="text-primary">Polaris</span>
+        se realiza mandando datos via <span class="text-info">DELETE</span> en formato JSON a la dirección:
+        <br>
+      .url
+        small  URL:
+        br
+        <code><span class="text-primary">https://polaris-app.herokuapp.com/api/logout</span></code>
+    .sintaxis
+      h3 Sintaxis
+      .send
+        p.
+          Ejemplo de JSON a enviar:
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-info "user_login"</span>: "example@mail.com" <br/>
+          } <br/>
+      .receive
+        p.
+          Respuesta ejemplo:
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-success "success"</span>: true <br/>
+          } <br/>
+      .errors
+        h3 Errores
+        p.
+          Entre los posibles errores se pueden encontrar:
+        h4 Si se especifíca un usario diferente al que actualmente esta con la sesión iniciada
+        blockquote: p
+          { <br/>
+          &nbsp;&nbsp;
+          span.text-danger "success"</span>: false, <br/>
+          &nbsp;&nbsp;
+          span.text-danger "message"</span>: "Not correct user" <br/>
+          } <br/>

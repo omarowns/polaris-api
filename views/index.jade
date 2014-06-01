@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .wrapper
+    .jumbotron
+      h1 Polaris::API
+      p.
+        Este recurso web describe la API con la cuál puedes interactuar con Polaris.
+      br
+      p Incluye:
+      br
+      p
+        a.text-primary(href="/register") Registro de Usuario
+      p
+        a.text-primary(href="/login") Inicio de sesión para Usuarios
+      p
+        a.text-danger(href="/logout") Cierre de sesión para Usuarios
+      p
+        a.text-danger(href="/get") Listado de Recordatorios
+      p
+        a.text-danger(href="/post") Creación de Recordatorio
+      p
+        a.text-danger(href="/update") Actualización de Recordatorio
+      p
+        a.text-danger(href="/delete") Borrado de Recordatorio

@@ -1,0 +1,35 @@
+.navbar.navbar-default
+    .navbar-header
+    button(class="navbar-toggle", data-toggle="collapse", data-target=".navbar-responsive-collapse").
+      span(class="icon-bar")
+      span(class="icon-bar")
+      span(class="icon-bar")
+    a(class="navbar-brand", href="/").
+      Polaris API
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      ul(class="nav navbar-nav")
+        li.dropdown
+          a(class="dropdown-toggle", data-toggle="dropdown") Usuarios
+            b.caret
+          ul.dropdown-menu
+            li.dropdown-header Creación
+            li
+              a(href="/register") Registro
+            li.divider
+            li.dropdown-header Sesiones
+            li
+              a(href="/login") Iniciar Sesión
+            li
+              a(href="/logout") Cerrar Sesión
+        li.dropdown
+          a(class="dropdown-toggle", data-toggle="dropdown") Recordatorios
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/get") Listar
+            li
+              a(href="/post") Crear Nuevo
+            li
+              a(href="/update") Actualizar
+            li
+              a(href="/delete") Borrar
